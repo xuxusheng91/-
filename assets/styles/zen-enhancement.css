@@ -1,0 +1,209 @@
+﻿/* ===== 缘舍 · 禅意美化增强 ===== */
+
+/* --- 禅意浮动画 --- */
+@keyframes zen-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-8px) rotate(1deg); }
+  66% { transform: translateY(4px) rotate(-0.5deg); }
+}
+@keyframes zen-float-slow {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-15px) scale(1.02); }
+}
+@keyframes zen-spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes zen-pulse-glow {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.03); }
+}
+@keyframes zen-petal-fall {
+  0% { transform: translateY(-10vh) rotate(0deg) translateX(0); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.4; }
+  100% { transform: translateY(110vh) rotate(720deg) translateX(100px); opacity: 0; }
+}
+@keyframes zen-ink-spread {
+  0% { clip-path: circle(0% at 50% 50%); opacity: 0.3; }
+  100% { clip-path: circle(70% at 50% 50%); opacity: 0.05; }
+}
+@keyframes zen-reveal-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes zen-draw-line {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes zen-breath {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.08); opacity: 0.9; }
+}
+@keyframes zen-glow-move {
+  0% { transform: translateX(-100%) translateY(-100%); }
+  100% { transform: translateX(100%) translateY(100%); }
+}
+@keyframes zen-ripple {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+/* --- 禅意装饰圆 (Enso) --- */
+.zen-enso {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 160, 94, 0.08);
+  animation: zen-pulse-glow 6s ease-in-out infinite;
+}
+.zen-enso-large {
+  width: 600px; height: 600px;
+  top: -150px; right: -200px;
+}
+.zen-enso-medium {
+  width: 350px; height: 350px;
+  bottom: 10%; left: -100px;
+  animation-delay: -2s;
+}
+.zen-enso-small {
+  width: 150px; height: 150px;
+  bottom: 30%; right: 10%;
+  animation-delay: -4s;
+  border-color: rgba(192, 58, 43, 0.06);
+}
+
+/* --- 莲花装饰 --- */
+.zen-lotus-container {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.04;
+}
+.zen-lotus-1 {
+  top: 15%; right: 8%;
+  width: 80px; height: 80px;
+  animation: zen-float-slow 7s ease-in-out infinite;
+}
+.zen-lotus-2 {
+  bottom: 20%; left: 5%;
+  width: 60px; height: 60px;
+  animation: zen-float-slow 9s ease-in-out infinite;
+  animation-delay: -3s;
+  opacity: 0.03;
+}
+
+/* --- 飘落花瓣粒子 --- */
+.zen-petal {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  width: 12px; height: 12px;
+  opacity: 0;
+  animation: zen-petal-fall linear infinite;
+}
+.zen-petal:nth-child(1) { left: 10%; animation-duration: 14s; animation-delay: 0s; }
+.zen-petal:nth-child(2) { left: 20%; animation-duration: 18s; animation-delay: -4s; width:8px; height:8px; }
+.zen-petal:nth-child(3) { left: 35%; animation-duration: 16s; animation-delay: -8s; }
+.zen-petal:nth-child(4) { left: 50%; animation-duration: 20s; animation-delay: -2s; width:10px; height:10px; }
+.zen-petal:nth-child(5) { left: 65%; animation-duration: 15s; animation-delay: -6s; }
+.zen-petal:nth-child(6) { left: 75%; animation-duration: 19s; animation-delay: -10s; width:6px; height:6px; }
+.zen-petal:nth-child(7) { left: 85%; animation-duration: 17s; animation-delay: -3s; }
+.zen-petal:nth-child(8) { left: 95%; animation-duration: 21s; animation-delay: -7s; width:9px; height:9px; }
+
+/* --- 卡片玻璃质感增强 --- */
+.zen-card {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.zen-card:hover {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3), 0 0 20px rgba(201,160,94,0.1);
+}
+
+/* --- 金色分隔线装饰 --- */
+.zen-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 24px 0;
+}
+.zen-divider::before,
+.zen-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,160,94,0.3), transparent);
+}
+.zen-divider-icon {
+  color: rgba(201,160,94,0.4);
+  font-size: 10px;
+}
+
+/* --- 墨迹装饰线 (SVG 线条) --- */
+.zen-ink-line {
+  width: 120px;
+  height: 2px;
+  margin: 12px auto;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(201,160,94,0.3) 20%, 
+    rgba(201,160,94,0.5) 50%, 
+    rgba(201,160,94,0.3) 80%, 
+    transparent 100%
+  );
+  border-radius: 2px;
+}
+
+/* --- 呼吸光晕 (用于大善门卡片) --- */
+.zen-glow-ring {
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(201,160,94,0.05), transparent 40%, transparent 60%, rgba(201,160,94,0.05));
+  z-index: -1;
+  animation: zen-breath 5s ease-in-out infinite;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.zen-glow-ring.active {
+  opacity: 1;
+}
+
+/* --- 平滑过渡增强 --- */
+.zen-smooth {
+  scroll-behavior: smooth;
+}
+
+/* --- 页脚禅意装饰 --- */
+.zen-footer-decoration {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,160,94,0.2), transparent);
+}
+
+/* --- 吉祥云纹背景 (经测试效果好的 SVG 图案) --- */
+.zen-cloud-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -5;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cpath d='M200 100c-30-20-70-10-80 20-40 10-60 50-40 80-10 30 20 60 50 50 20 30 70 30 80-10 30 0 50-30 30-60 30-20 10-60-20-50-20-20-50-30-80-10z' fill='rgba(201,160,94,0.1)'/%3E%3C/svg%3E");
+  background-size: 400px 400px;
+}
+
+/* --- 响应式确保花瓣不遮挡内容 --- */
+@media (max-width: 768px) {
+  .zen-petal { display: none; }
+  .zen-lotus-1, .zen-lotus-2 { display: none; }
+}
