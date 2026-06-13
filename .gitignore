@@ -1,0 +1,4 @@
+﻿.vercel
+# audio files - too large for git, added manually or via LFS
+/audio/*.ogg
+/audio/*.mp3

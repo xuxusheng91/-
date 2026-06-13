@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <clipPath id="circleClip">
+      <circle cx="100" cy="100" r="96" />
+    </clipPath>
+  </defs>
+  <!-- Gold ring -->
+  <circle cx="100" cy="100" r="99" fill="#C9A05C" opacity="0.3" />
+  <circle cx="100" cy="100" r="96" fill="#0D0A08" />
+  <image
+    href="./yuanshe-logo.jpeg"
+    x="6" y="6"
+    width="188" height="188"
+    clip-path="url(#circleClip)"
+    preserveAspectRatio="xMidYMid slice"
+  />
+  <!-- Gold border ring -->
+  <circle cx="100" cy="100" r="96" fill="none" stroke="#C9A05C" stroke-width="1.5" opacity="0.5" />
+</svg>

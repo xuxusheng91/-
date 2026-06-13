@@ -1,0 +1,13 @@
+{
+  "name": "缘舍 · 静心祈福平台",
+  "short_name": "缘舍",
+  "description": "缘舍 · 静心祈福平台 — 一念清净，缘起缘聚。为家人祈福、求签问卦、命理八字。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0D0A08",
+  "theme_color": "#C9A05C",
+  "icons": [
+    { "src": "/images/yuanshe-logo.png", "sizes": "1024x1024", "type": "image/png" },
+    { "src": "/images/yuanshe-logo@2x.png", "sizes": "200x200", "type": "image/png" }
+  ]
+}
