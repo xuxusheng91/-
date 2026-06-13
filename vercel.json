@@ -11,7 +11,7 @@
     { "src": "*.jpeg", "use": "@vercel/static" }
   ],
   "routes": [
-    { "handle": "filesystem" },
-    { "src": "/meditation", "dest": "/404.html" }
+    { "handle": "filesystem" }
   ]
 }
+
