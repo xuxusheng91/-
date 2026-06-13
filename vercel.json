@@ -1,17 +1,43 @@
-﻿{
+{
   "version": 2,
+  "cleanUrls": true,
   "builds": [
-    { "src": "**/*.html", "use": "@vercel/static" },
-    { "src": "_next/**", "use": "@vercel/static" },
-    { "src": "audio/**", "use": "@vercel/static" },
-    { "src": "images/**", "use": "@vercel/static" },
-    { "src": "fonts/**", "use": "@vercel/static" },
-    { "src": "*.svg", "use": "@vercel/static" },
-    { "src": "*.webmanifest", "use": "@vercel/static" },
-    { "src": "*.jpeg", "use": "@vercel/static" }
+    {
+      "src": "**/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "_next/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "audio/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "images/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "fonts/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.svg",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.webmanifest",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "*.jpeg",
+      "use": "@vercel/static"
+    }
   ],
   "routes": [
-    { "handle": "filesystem" }
+    {
+      "handle": "filesystem"
+    }
   ]
 }
-

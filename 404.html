@@ -207,6 +207,326 @@
   .zen-petal { display: none; }
   .zen-lotus-1, .zen-lotus-2 { display: none; }
 }
+/* ===== 缘舍 · 高级配色/字体增强 ===== */
+:root {
+  --gold-dark: #6B5B3E;
+  --gold-mid: #8B7355;
+  --gold: #C9A84C;
+  --gold-light: #E8D5A3;
+  --vermillion: #8B2500;
+  --vermillion-light: #C03A2B;
+  --ink: #1a1410;
+  --paper: #F5F0EB;
+  --paper-dark: #D4C9B8;
+  --xuan-bg: #0f0d0a;
+  --xuan-card: rgba(26, 20, 16, 0.85);
+}
+
+/* --- 高级字体栈 --- */
+.premium-font {
+  font-family: 'Liu Jian Mao Cao', 'ZCOOL QingKe HuangYou', 'Ma Shan Zheng', 'Noto Serif SC', serif;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+}
+.premium-font-serif {
+  font-family: 'Noto Serif SC', 'ZCOOL XiaoWei', 'Source Han Serif SC', serif;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+/* --- 金色渐变主按钮 --- */
+.btn-premium {
+  background: linear-gradient(135deg, #8B7355 0%, #C9A84C 50%, #E8D5A3 100%);
+  border: none;
+  color: #1a1410;
+  box-shadow: 0 4px 20px rgba(107, 91, 62, 0.3), inset 0 1px 0 rgba(232, 213, 163, 0.3);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.btn-premium:hover {
+  box-shadow: 0 8px 30px rgba(201, 168, 76, 0.4), inset 0 1px 0 rgba(232, 213, 163, 0.5);
+  transform: translateY(-2px);
+}
+
+/* --- 首页LOGO增强 --- */
+.logo-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-container::before {
+  content: '';
+  position: absolute;
+  width: 130%;
+  height: 130%;
+  background: radial-gradient(circle, rgba(201,168,76,0.12), transparent 70%);
+  animation: zen-pulse-glow 4s ease-in-out infinite;
+}
+.logo-glow {
+  filter: drop-shadow(0 0 30px rgba(201,168,76,0.3));
+  transition: filter 0.5s;
+}
+.logo-glow:hover {
+  filter: drop-shadow(0 0 50px rgba(201,168,76,0.5));
+}
+
+/* --- 悬挂灯笼容器 --- */
+.lantern-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px 0;
+  flex-wrap: wrap;
+}
+.lantern {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+}
+.lantern:hover {
+  transform: translateY(-8px);
+}
+.lantern-rope {
+  width: 2px;
+  height: 30px;
+  background: linear-gradient(180deg, transparent, var(--gold-dark));
+}
+.lantern-body {
+  position: relative;
+  border-radius: 50% 50% 45% 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: all 0.5s;
+  overflow: hidden;
+}
+.lantern-body::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 6px;
+  background: var(--gold-dark);
+  border-radius: 3px;
+}
+.lantern-body::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 4px;
+  background: var(--gold-dark);
+  border-radius: 2px;
+}
+.lantern-tassel {
+  width: 1px;
+  height: 15px;
+  background: var(--vermillion-light);
+}
+.lantern-tassel-end {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--vermillion-light);
+}
+
+/* 灯笼级别样式 */
+.lantern-tier-1 .lantern-body {
+  width: 60px; height: 70px;
+  background: linear-gradient(180deg, #D4A056, #8B4513);
+  font-size: 10px;
+  color: #fff;
+  opacity: 0.8;
+}
+.lantern-tier-2 .lantern-body {
+  width: 70px; height: 85px;
+  background: linear-gradient(180deg, #E8B85A, #A0522D);
+  font-size: 11px;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(232,184,90,0.3);
+}
+.lantern-tier-2::after {
+  content: '✦';
+  position: absolute;
+  top: -8px;
+  font-size: 16px;
+  color: var(--gold);
+  animation: zen-spin-slow 6s linear infinite;
+}
+.lantern-tier-3 .lantern-body {
+  width: 80px; height: 100px;
+  background: linear-gradient(180deg, #F0C860, #CD853F);
+  font-size: 12px;
+  color: #fff;
+  box-shadow: 0 0 25px rgba(240,200,96,0.4);
+  border: 1px solid rgba(255,215,0,0.3);
+}
+.lantern-tier-3::after {
+  content: '✦';
+  position: absolute;
+  top: -8px; right: -5px;
+  font-size: 14px;
+  color: var(--gold-light);
+  animation: zen-spin-slow 5s linear infinite;
+}
+.lantern-tier-3::before {
+  content: '✦';
+  position: absolute;
+  top: -8px; left: -5px;
+  font-size: 14px;
+  color: var(--gold-light);
+  animation: zen-spin-slow 5s linear infinite reverse;
+}
+.lantern-tier-4 .lantern-body {
+  width: 90px; height: 110px;
+  background: linear-gradient(180deg, #FFD700, #DAA520, #B8860B);
+  font-size: 13px;
+  color: #fff;
+  box-shadow: 0 0 35px rgba(255,215,0,0.5);
+  border: 1px solid rgba(255,215,0,0.4);
+  animation: zen-pulse-glow 3s ease-in-out infinite;
+}
+.lantern-tier-4::after {
+  content: '❋';
+  position: absolute;
+  top: -12px;
+  font-size: 20px;
+  color: var(--gold-light);
+  animation: zen-spin-slow 4s linear infinite;
+}
+.lantern-tier-5 .lantern-body {
+  width: 100px; height: 120px;
+  background: linear-gradient(180deg, #FFE44D, #FFD700, #DAA520, #B8860B);
+  font-size: 14px;
+  color: #fff;
+  box-shadow: 0 0 45px rgba(255,215,0,0.6), inset 0 0 20px rgba(255,215,0,0.1);
+  border: 1px solid rgba(255,215,0,0.5);
+  animation: zen-pulse-glow 2.5s ease-in-out infinite;
+}
+.lantern-tier-5::after {
+  content: '❋';
+  position: absolute;
+  top: -12px;
+  font-size: 24px;
+  color: var(--gold-light);
+  animation: zen-spin-slow 3s linear infinite;
+}
+.lantern-tier-5 .lantern-body span {
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+/* --- 大师解签容器 --- */
+.master-container {
+  position: relative;
+  width: 200px; height: 280px;
+  margin: 0 auto;
+}
+.master-figure {
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 140px; height: 200px;
+  background: linear-gradient(180deg, var(--xuan-card), rgba(59, 35, 5, 0.9));
+  border-radius: 60% 60% 40% 40% / 80% 80% 40% 40%;
+  border: 1px solid rgba(201,168,76,0.2);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.master-figure:hover {
+  box-shadow: 0 4px 30px rgba(201,168,76,0.2);
+}
+.master-head {
+  width: 50px; height: 60px;
+  background: radial-gradient(ellipse at 50% 30%, #f5deb3, #d4a574);
+  border-radius: 50%;
+  margin-top: 10px;
+  position: relative;
+}
+.master-head::after {
+  content: '~';
+  position: absolute;
+  bottom: 5px; left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  color: #8B7355;
+}
+.master-robe {
+  width: 100px; height: 80px;
+  background: linear-gradient(135deg, #5C4033, #3E2723, #5C4033);
+  border-radius: 30% 30% 50% 50% / 40% 40% 50% 50%;
+  margin-top: 5px;
+  position: relative;
+  overflow: hidden;
+}
+.master-robe::before {
+  content: '卍';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: rgba(201,168,76,0.3);
+}
+.master-hands {
+  position: absolute;
+  bottom: 25px;
+  display: flex;
+  gap: 30px;
+}
+.master-hand {
+  width: 18px; height: 14px;
+  background: #f5deb3;
+  border-radius: 50%;
+  animation: master-move 3s ease-in-out infinite;
+}
+.master-hand.left { animation-delay: 0s; }
+.master-hand.right { animation-delay: 1.5s; }
+@keyframes master-move {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* --- 灯笼光晕动画 --- */
+@keyframes lantern-glow-1 {
+  0%, 100% { box-shadow: 0 0 10px rgba(212,160,86,0.3); }
+  50% { box-shadow: 0 0 20px rgba(212,160,86,0.5); }
+}
+@keyframes lantern-glow-2 {
+  0%, 100% { box-shadow: 0 0 15px rgba(232,184,90,0.4); }
+  50% { box-shadow: 0 0 30px rgba(232,184,90,0.6); }
+}
+@keyframes lantern-glow-3 {
+  0%, 100% { box-shadow: 0 0 20px rgba(240,200,96,0.5); }
+  50% { box-shadow: 0 0 40px rgba(240,200,96,0.7); }
+}
+@keyframes lantern-glow-4 {
+  0%, 100% { box-shadow: 0 0 25px rgba(255,215,0,0.5); }
+  50% { box-shadow: 0 0 50px rgba(255,215,0,0.7); }
+}
+@keyframes lantern-glow-5 {
+  0%, 100% { box-shadow: 0 0 35px rgba(255,215,0,0.6); }
+  50% { box-shadow: 0 0 60px rgba(255,215,0,0.8); }
+}
+.lantern-tier-1 { animation: lantern-glow-1 3s ease-in-out infinite; }
+.lantern-tier-2 { animation: lantern-glow-2 3s ease-in-out infinite; }
+.lantern-tier-3 { animation: lantern-glow-3 2.5s ease-in-out infinite; }
+.lantern-tier-4 { animation: lantern-glow-4 2s ease-in-out infinite; }
+.lantern-tier-5 { animation: lantern-glow-5 1.5s ease-in-out infinite; }
 </style>
 </head><body class="antialiased">
 <div class="zen-enso zen-enso-large"></div>
